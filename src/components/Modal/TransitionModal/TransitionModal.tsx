@@ -1,8 +1,7 @@
 import { PropsWithChildren, useEffect, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
-import { EscKeyEvent } from './config';
-import { ReactPortal } from './ReactPortal';
+import { ReactPortal } from '../ReactPortal';
 import classes from './styles.module.css';
 
 type ModalProps = PropsWithChildren<{
@@ -10,12 +9,17 @@ type ModalProps = PropsWithChildren<{
   onClose: () => void;
 }>;
 
-export function Modal({
+const enum EscKeyEvent {
+  Escape = 'Escape',
+  Esc = 'Esc',
+}
+
+export function TransitionModal({
   children,
   isOpen,
   onClose,
-}: ModalProps): JSX.Element | null {
-  const modalRef = useRef(null);
+}: ModalProps): JSX.Element {
+  const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const closeOnEscapeKey = (evt: KeyboardEvent) => {
@@ -31,7 +35,7 @@ export function Modal({
   }, [onClose]);
 
   return (
-    <ReactPortal wrapperId="react-portal-modal-container">
+    <ReactPortal wrapperId="transition-modal-container">
       <CSSTransition
         in={isOpen}
         timeout={{ exit: 300 }}

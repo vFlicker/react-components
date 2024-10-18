@@ -1,0 +1,64 @@
+.modal[open] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 70%;
+  height: 70%;
+  border: none;
+
+  color: #fff;
+  background-color: #282c34;
+  font-size: 2rem;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out,
+    overlay 0.3s ease-in-out allow-discrete,
+    display 0.3s ease-in-out allow-discrete;
+}
+
+@starting-style {
+  .modal[open] {
+    opacity: 0;
+  }
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0);
+  transition: display 0.3s ease-in-out allow-discrete,
+    overlay 0.3s ease-in-out allow-discrete,
+    background-color 0.3s ease-in-out;
+}
+
+.modal[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+@starting-style {
+  .modal[open]::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.modal__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modal-content {}
+
+.modal-enter-done {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-exit {
+  opacity: 0;
+}

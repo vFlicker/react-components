@@ -2,14 +2,13 @@ import './App.css';
 
 import { useState } from 'react';
 
-import { Modal } from '../components/Modal';
+import { DialogModal, TransitionModal } from '../components/Modal';
 import { PhoneInput } from '../components/PhoneInput';
 
 export function App(): JSX.Element {
-  const [showModal, setShowModal] = useState(false);
-  const [phoneValue, setPhoneValue] = useState<string | undefined>(
-    '+380980000000',
-  );
+  const [phoneValue, setPhoneValue] = useState<string | undefined>('');
+  const [showTransitionModal, setShowTransitionModal] = useState(false);
+  const [showDialogModal, setShowDialogModal] = useState(false);
 
   const error = phoneValue === '+380980000001' ? 'Error text...' : '';
 
@@ -24,12 +23,30 @@ export function App(): JSX.Element {
         onChange={setPhoneValue}
       />
 
-      <div className="app-header">
-        <button onClick={() => setShowModal(true)}>Click to Open Modal</button>
+      <div className="modal">
+        <button onClick={() => setShowTransitionModal(true)}>
+          Click to Open Modal
+        </button>
 
-        <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+        <TransitionModal
+          isOpen={showTransitionModal}
+          onClose={() => setShowTransitionModal(false)}
+        >
           This is Modal Content!
-        </Modal>
+        </TransitionModal>
+      </div>
+
+      <div className="modal">
+        <button onClick={() => setShowDialogModal(true)}>
+          Click to Open Modal
+        </button>
+
+        <DialogModal
+          isOpen={showDialogModal}
+          onClose={() => setShowDialogModal(false)}
+        >
+          This is Modal Content!
+        </DialogModal>
       </div>
     </>
   );
