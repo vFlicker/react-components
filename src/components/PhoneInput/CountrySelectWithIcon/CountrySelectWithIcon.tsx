@@ -2,7 +2,7 @@ import { ElementType, useState } from 'react';
 import { Country, getCountryCallingCode } from 'react-phone-number-input';
 
 import { country, countryCodes } from './config';
-import classes from './CountrySelectWithIcon.module.css';
+import classes from './styles.module.css';
 import { getSelectedOption, Option } from './utils';
 
 type CountrySelectWithIconProps = {

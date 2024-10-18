@@ -4,12 +4,12 @@ import './reset.css';
 import Input, { Country } from 'react-phone-number-input';
 
 import { CountrySelectWithIcon } from './CountrySelectWithIcon/CountrySelectWithIcon';
-import classes from './PhoneInput.module.css';
+import classes from './styles.module.css';
 
 type PhoneInputProps = {
   name: string;
   label: string;
-  value: string;
+  value?: string;
   error?: string;
   defaultCountry?: Country;
 

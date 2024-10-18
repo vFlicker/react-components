@@ -1,0 +1,54 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 20px;
+
+  background-color: rgba(0, 0, 0, 0.6);
+
+  overflow: hidden;
+  z-index: 999;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-inner {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 70%;
+  height: 70%;
+
+  background-color: #282c34;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.modal__btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modal-content {}
+
+.modal-enter-done {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-exit {
+  opacity: 0;
+}
