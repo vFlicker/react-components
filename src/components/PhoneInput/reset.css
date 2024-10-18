@@ -1,0 +1,36 @@
+/* Library styles */
+.PhoneInput input {
+  flex: 1;
+
+  width: 100%;
+  height: -webkit-fit-content;
+  padding: 10px 26px 10px 40px;
+
+  border: 1px solid #000000;
+  box-shadow: none;
+  /* Remove box-shadow in safari */
+  -webkit-appearance: none;
+
+  color: #000000;
+
+  text-indent: 30px;
+  font-size: 14px;
+  font-weight: 500 !important;
+
+  outline: none;
+  background-color: transparent;
+
+  z-index: 1;
+}
+
+.PhoneInput input:focus {
+  border-color: deepskyblue;
+  box-shadow: none;
+}
+
+.PhoneInput input::placeholder {
+  margin-left: 20px;
+  color: darkgray;
+  font-size: 14px;
+  font-weight: 500;
+}

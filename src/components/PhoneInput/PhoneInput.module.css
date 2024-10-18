@@ -1,0 +1,29 @@
+.field {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  max-width: 280px;
+}
+
+.field__input--error input,
+.field__input--error input:focus {
+  border-color: tomato;
+}
+
+.field__label {
+  order: -1;
+  margin-bottom: 6px;
+  padding-left: 4px;
+  color: #000000;
+}
+
+.field__error {
+  margin-top: 4px;
+
+  color: tomato;
+  font-size: 13px;
+  font-weight: 500;
+}
